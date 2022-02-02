@@ -1,7 +1,7 @@
 import type { ESLintProgram } from 'vue-eslint-parser/ast'
 import { parse } from 'vue-eslint-parser'
 
-export function ASTTransform( file: Array<string>) : [ ESLintProgram, string, string ] => {
+export function ASTTransform( file: Array<string>) : [ ESLintProgram, string, string ] {
 	const options = {
 		sourceType: 'module',
 		ecmaVersion: 11
@@ -9,7 +9,7 @@ export function ASTTransform( file: Array<string>) : [ ESLintProgram, string, st
 
 	const [fileBuffer, fileName] = file
 
-	let fileParsedESLint
+	let fileParsedESLint:ESLintProgram
 
 	try  {
 		fileParsedESLint = parse(fileBuffer, options)
@@ -20,5 +20,4 @@ export function ASTTransform( file: Array<string>) : [ ESLintProgram, string, st
 	}
 
 	return [ fileParsedESLint , fileName, fileBuffer ]
-
 }
