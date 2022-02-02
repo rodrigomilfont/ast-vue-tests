@@ -1,6 +1,14 @@
 import fs from 'fs'
 
-export function FileReader(file: string):string[]
+export function FileReader(path: string):string[]
 {
-	return [ fs.readFileSync(file, 'utf8'), file ];
+	let responseFile:string
+
+	try {
+		responseFile = fs.readFileSync(path, 'utf8')
+	} catch (error) {
+		responseFile = ''
+	}
+
+	return [ responseFile, path ];
 }
