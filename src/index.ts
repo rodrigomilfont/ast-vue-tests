@@ -14,3 +14,4 @@ fileLoader
 	.map((files) => FileReader(files))
 	.map((files) => ASTTransform(files))
 	.map((files) => ExtractFunctionScript(files))
+	.map((files) => console.log(files))

@@ -6,10 +6,9 @@ function generateCode(file:string, node: { range: number[] }) {
 	console.log('generateCode: ', generateCodeFrame(file, node.range[0], node.range[1] ));
 }
 
-export function ExtractFunctionScript(node: [ESLintProgram,  string, string ] ): string[] {
-	const functionNames: string[] = [];
-
+export function ExtractFunctionScript(node: [ESLintProgram,  string, string ] ): [ESLintProgram , string, string, string[]] {
 	const [estree, filename, fileBuffer ] = node;
+	const functionNames: string[] = [];
 
 	console.log('filename: ', filename);
 	console.log('fileBuffer ', fileBuffer);
@@ -31,6 +30,5 @@ export function ExtractFunctionScript(node: [ESLintProgram,  string, string ] ):
 		},
 	})
 
-	console.log('functionNames: ', functionNames);
-	return functionNames
+	return [ estree, filename, fileBuffer, functionNames ]
 }
