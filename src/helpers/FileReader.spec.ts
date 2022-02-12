@@ -11,4 +11,14 @@ describe('FileReader', () => {
 
 		expect(fileloaderTest).to.deep.equal([ '', path ])
 	})
+
+	it('should test FileReader when fail', () => {
+
+
+		const path = ''
+
+		const fileloaderTest = FileReader(path)
+
+		expect(fileloaderTest).to.deep.equal(['', path])
+	})
 })
