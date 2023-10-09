@@ -21,6 +21,7 @@
     "dist/"
   ],
   "scripts": {
+    "ts-node": "ts-node",
     "build": "npm run clean && npm run lint && tsc",
     "changelog": "conventional-changelog -p angular -u",
     "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
@@ -53,8 +54,8 @@
     "nodemon": "^2.0.18",
     "nyc": "^15.0.0",
     "source-map-support": "^0.5.12",
-    "ts-node": "^10.5.0",
-    "typescript": "^4.0.3"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   },
   "config": {
     "commitizen": {

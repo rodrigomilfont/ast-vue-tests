@@ -10,6 +10,7 @@ export class FileLoader {
 
 	public getSystemFiles () {
 		const DIR = `${process.env.DIR + '/' + this.extension}`;
+		console.log('DIR:', DIR)
 
 		return glob.sync(DIR, {})
 	}
